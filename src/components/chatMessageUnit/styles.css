@@ -4,8 +4,11 @@
   padding: 10px 0 0 10px;
   margin-bottom: 15px;
   width: 45%;
-  border-radius: 15px;
-  color: gray
+  border-radius: 6px;
+  color: rgba(0, 0, 0, .87);
+  box-shadow: 7px 7px 10px -3px rgba(0,0,0,0.59);
+  min-height: 50px;
+
 }
 
 .client_message {

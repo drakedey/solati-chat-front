@@ -5,6 +5,7 @@ import './styles.css';
 
 import ChatMessageUnit from '../../components/chatMessageUnit';
 import ChatInput from '../../components/chatInput';
+import ChatHeader from '../../components/chatHeader';
 
 const ENDPOINT = 'http://127.0.0.1:5000';
 
@@ -44,6 +45,9 @@ const ChatRoom = () => {
 
   return (
     <div className="main">
+      <div className="chat_header">
+        <ChatHeader />
+      </div>
       <div className="chat_messages">{mapMessageUnits()}</div>
       <div className="chat_input">
         <ChatInput onMessageSent={handleMessageSent} />
