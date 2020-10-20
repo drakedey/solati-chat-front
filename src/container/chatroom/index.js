@@ -6,6 +6,7 @@ import './styles.css';
 import ChatMessageUnit from '../../components/chatMessageUnit';
 import ChatInput from '../../components/chatInput';
 import ChatHeader from '../../components/chatHeader';
+import AuthenticationModal from '../../components/authenticationModal';
 
 const ENDPOINT = 'http://127.0.0.1:5000';
 
@@ -52,6 +53,7 @@ const ChatRoom = () => {
       <div className="chat_input">
         <ChatInput onMessageSent={handleMessageSent} />
       </div>
+      <AuthenticationModal />
     </div>
   );
 };
