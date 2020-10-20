@@ -11,6 +11,7 @@ const ChatInput = ({ onMessageSent }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
+    setMessage('');
     // TODO: add validation
     onMessageSent(message)
   }
@@ -18,7 +19,7 @@ const ChatInput = ({ onMessageSent }) => {
   return (
     <div className="input_container">
       <form onSubmit={handleSubmit}>
-        <input className="input" type="number" min={0} onChange={handleMessageChange} placeholder="Enter colombian pesos to be converted" />
+        <input className="input" type="number" min={0} onChange={handleMessageChange} value={message} placeholder="Enter colombian pesos to be converted" />
       </form>
     </div>
   )
