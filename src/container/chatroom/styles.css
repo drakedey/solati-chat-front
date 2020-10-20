@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+  height: 100vh;
+  flex-flow: column;
+}
+
+.chat_messages {
+  min-height: 90vh;
+  display: flex;
+  flex-flow: column;
+  padding: 15px 30px 15px 30px;
+  background-color: lightgray;
+}
+
+.chat_input {
+  width: 100%
+}
+
+.input {
+  width: 90%
+}

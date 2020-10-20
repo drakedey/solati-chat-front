@@ -1,0 +1,14 @@
+.chat_container {
+  height: 50px;
+  background-color: lightblue;
+  padding: 10px 0 0 10px;
+  margin-bottom: 15px;
+  width: 45%;
+  border-radius: 15px;
+  color: gray
+}
+
+.client_message {
+  align-self: flex-end;
+  background-color: lightyellow;
+}
