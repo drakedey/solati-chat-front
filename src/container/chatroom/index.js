@@ -40,7 +40,7 @@ const ChatRoom = () => {
     messages.map((message, idx) => <ChatMessageUnit key={idx} {...message} />);
 
   const handleMessageSent = (message) => {
-    socket.emit('REQUEST_MESSAGE', { currency: 'COP', value: message });
+    socket.emit('REQUEST_MESSAGE', { currency: 'COP', value: message, username: data.data.username });
     setMessages((prevMessages) => [
       ...prevMessages,
       { message, from: 'client' },
