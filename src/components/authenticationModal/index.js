@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import ReactModal from 'react-modal';
+
+import { UserContext } from '../../providers/User';
 
 import { getUserByUsername, doLogin, doRegister } from '../../api/user';
 
@@ -11,7 +13,8 @@ const DO_LOGIN = 'DO_LOGIN';
 const DO_REGISTER = 'DO_REGISTER';
 
 const AuthenticationModal = (props) => {
-  const [open, setOpen] = useState(true);
+  const { data, login } = useContext(UserContext);
+  const [open, setOpen] = useState(!Boolean(data.token));
   const [formValues, setFormValues] = useState({ username: '', password: '' });
   const [formStatus, setFormStatus] = useState(VERIFY_NAME);
   const [formError, setFormError] = useState('');
@@ -46,7 +49,8 @@ const AuthenticationModal = (props) => {
   const handleLogin = async () => {
     try {
       const data = await doLogin(formValues.username, formValues.password);
-      console.log(data);
+      login(data.data)
+      setOpen(false)
     } catch (err) {
       if (err.response) {
         if (err.response.status === 401) {
@@ -60,7 +64,8 @@ const AuthenticationModal = (props) => {
     try {
       const { username, password } = formValues;
       const data = await doRegister({ username, password });
-      console.log(data);
+      login(data.data);
+      setOpen(false);
     } catch (err) {
       if (err.response) {
         if (err.response) {
