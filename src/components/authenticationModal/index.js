@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 
 import ReactModal from 'react-modal';
 
@@ -18,6 +18,13 @@ const AuthenticationModal = (props) => {
   const [formValues, setFormValues] = useState({ username: '', password: '' });
   const [formStatus, setFormStatus] = useState(VERIFY_NAME);
   const [formError, setFormError] = useState('');
+
+  useEffect(() => {
+    setOpen(!Boolean(data.token));
+    if (!Boolean(data.token)) {
+      setFormStatus(VERIFY_NAME)
+    }
+  }, [data.token])
 
   const getButtonText = (match) => {
     if (match === VERIFY_NAME) return 'Verificar nombre de usuario';

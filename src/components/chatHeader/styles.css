@@ -1,41 +1,53 @@
-
 .header_container {
-
 }
 
 .header_menu {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-    color: rgba(0, 0, 0, .87);
-    transition: all .3s ease-in-out;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  color: rgba(0, 0, 0, 0.87);
+  transition: all 0.3s ease-in-out;
 }
 
 .header_icon {
-    font-size: 22px;
-    color: rgba(0, 0, 0, .60);
+  font-size: 22px;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .header_icon:hover {
-    color: rgb(1, 11, 65);
-    transition: all .3s ease-in-out;
+  color: rgb(1, 11, 65);
+  transition: all 0.3s ease-in-out;
 }
 
-
 .header_dropdown {
-    display: none;
-    min-height: 100px;
-    border-radius: 4px;
-    box-shadow: 7px 7px 17px 2px rgba(0,0,0,0.30);
-    position: fixed;
-    background: white;
-    padding: 20px;
-    top: 25px;
-    right: 25px;
+  display: none;
+  min-height: 100px;
+  border-radius: 4px;
+  box-shadow: 7px 7px 17px 2px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  background: white;
+  padding: 20px;
+  top: 25px;
+  right: 25px;
 }
 
 .header_dropdown_show {
-    display: block;
+  display: block;
+}
+
+.logout_icon {
+  height: 1.3em;
+  padding-left: 5px;
+}
+
+.logout_icon:hover {
+  cursor: pointer;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
